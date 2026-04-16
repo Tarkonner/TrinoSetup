@@ -1,0 +1,5 @@
+Get into Trino:
+docker exec -it trino trino
+
+Show connections
+SHOW CATALOGS;

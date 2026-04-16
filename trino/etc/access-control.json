@@ -1,0 +1,10 @@
+{
+  "access-control.name": "file",
+  "catalogs": [
+    {
+      "user": ".*",
+      "catalog": ".*",
+      "allow": "read-only"
+    }
+  ]
+}
