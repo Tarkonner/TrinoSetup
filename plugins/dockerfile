@@ -1,6 +1,0 @@
-FROM trinodb/trino:480
-
-# MySQL connector is usually included, but we ensure structure
-RUN mkdir -p /usr/lib/trino/plugin
-
-# (We will add SQL Server + Elasticsearch here)

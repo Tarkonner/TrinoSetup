@@ -1,5 +1,4 @@
 {
-  "access-control.name": "file",
   "catalogs": [
     {
       "user": ".*",

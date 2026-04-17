@@ -1,5 +1,9 @@
 Get into Trino:
 docker exec -it trino trino
 
-Show connections
+I Trino
+Show connections:
 SHOW CATALOGS;
+
+Show connctors:
+SELECT * FROM system.metadata.catalogs;
