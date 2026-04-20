@@ -2,6 +2,11 @@
   "catalogs": [
     {
       "user": ".*",
+      "catalog": "views",
+      "allow": "all"
+    },
+    {
+      "user": ".*",
       "catalog": ".*",
       "allow": "read-only"
     }
