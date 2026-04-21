@@ -9,3 +9,26 @@ services:
     volumes:
       - ./trino/etc:/etc/trino
       - ./trino/catalog:/etc/trino/catalog
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  
+    depends_on:
+      views-db:
+        condition: service_healthy
+
+  views-db:
+    image: postgres:15
+    container_name: views-db
+    environment:
+      POSTGRES_USER: trino
+      POSTGRES_PASSWORD: trino
+      POSTGRES_DB: views_meta
+    volumes:
+      - views_db_data:/var/lib/postgresql/data   # ← this is what persists
+      - ./trino/views-db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trino -d views_meta"]
+      interval: 5s
+      retries: 5
+
+volumes:
+  views_db_data:   # Docker manages this — survives "docker compose down"
