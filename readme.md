@@ -5,7 +5,7 @@ The setup is made to automatically mount the Trino container with the catalogs a
 
 # Setup
 ## Use connectors
-To make a connection to a database, a catalog needs to be added to the catalog folder in the project. How it is written changes after what kind of database you want to connect to (Documentation: https://trino.io/docs/current/connector.html). Remember that the file should be a .properties type.
+To make a connection to a database, a catalog needs to be added to the catalog folder in the project. How it is written changes after what kind of database you want to connect to (Documentation: https://trino.io/docs/current/connector.html). Remember that the file should be a .properties type. The name of the connecters can't have uppercase letters.
 Remember to restart the project if connectors were added while trino was running.
 To see if the catalogs setup is set up correctly, get into Trino and call: “SHOW CATALOGS;”. That should show a list of the type of databases you have set up. 
 
